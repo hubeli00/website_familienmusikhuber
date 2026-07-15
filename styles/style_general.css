@@ -21,7 +21,7 @@
 html {
     box-sizing: border-box;
     scroll-behavior: smooth;
-    scroll-padding-top: calc(var(--header-height) + 1rem);
+    scroll-padding-top: var(--header-height);
 }
 
 *,
@@ -166,8 +166,21 @@ a {
 }
 
 .hero {
+    --hero-title-progress: 0;
+    position: relative;
     width: 100%;
+    overflow: hidden;
+    isolation: isolate;
     background: #241c17;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    inset: 0;
+    background: linear-gradient(0deg, rgb(18 12 8 / 68%) 0%, rgb(18 12 8 / 22%) 32%, transparent 58%);
+    pointer-events: none;
 }
 
 .hero picture {
@@ -178,19 +191,42 @@ a {
     display: block;
     width: 100%;
     height: auto;
-    max-height: calc(100svh - var(--header-height));
-    object-fit: contain;
-    object-position: center;
+}
+
+.hero_title {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    right: clamp(1.25rem, 6vw, 6rem);
+    left: clamp(1.25rem, 6vw, 6rem);
+    height: min(100%, calc(100svh - var(--header-height)));
+    padding-bottom: clamp(1.5rem, 4vw, 4rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    color: white;
+    opacity: calc(1 - (var(--hero-title-progress) * 0.82));
+    transform: translateY(calc(var(--hero-title-progress) * 1.5rem)) scale(calc(1 - (var(--hero-title-progress) * 0.035)));
+    transform-origin: bottom left;
+    will-change: opacity, transform;
+}
+
+.hero_title .eyebrow,
+.hero_title h1 {
+    color: white;
+    text-shadow: 0 0.2rem 1.75rem rgb(0 0 0 / 55%);
+}
+
+.hero_title h1 {
+    max-width: 11ch;
+    margin-bottom: 0;
+    font-size: clamp(3.25rem, 8.5vw, 7.5rem);
+    line-height: 0.96;
 }
 
 .section,
 .section_compact {
     padding-inline: clamp(1.25rem, 5vw, 4rem);
-    scroll-margin-top: calc(var(--header-height) + 1rem);
-}
-
-.content_section {
-    scroll-margin-top: calc(var(--header-height) + 1rem);
 }
 
 .section {
@@ -217,6 +253,10 @@ a {
 
 .intro_inner {
     max-width: 56rem;
+}
+
+.intro .lead {
+    margin-bottom: 0;
 }
 
 .eyebrow {
@@ -414,6 +454,16 @@ p {
     font-size: clamp(2.75rem, 7vw, 5.5rem);
 }
 
+.section_scroll_heading {
+    --section-title-progress: 0;
+    top: auto;
+    bottom: clamp(1.5rem, 4vw, 4rem);
+    opacity: calc(1 - (var(--section-title-progress) * 0.82));
+    transform: translateY(calc(var(--section-title-progress) * 1.5rem)) scale(calc(1 - (var(--section-title-progress) * 0.035)));
+    transform-origin: bottom left;
+    will-change: opacity, transform;
+}
+
 .section_intro {
     max-width: 47rem;
     margin: 0 auto clamp(2.5rem, 5vw, 4rem);
@@ -429,7 +479,6 @@ p {
     gap: clamp(1.25rem, 3vw, 2rem);
 }
 
-.media_card,
 .info_card {
     padding: clamp(1.5rem, 4vw, 2.6rem);
     border: 1px solid var(--color-border);
@@ -438,38 +487,110 @@ p {
     box-shadow: 0 0.75rem 2.5rem rgb(32 39 34 / 6%);
 }
 
-.spotify_player {
+.music_grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: stretch;
+}
+
+.album_card {
+    min-width: 0;
+    align-self: start;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-medium);
+    background: var(--color-surface);
+    box-shadow: 0 0.75rem 2.5rem rgb(32 39 34 / 6%);
+}
+
+.album_cover {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1;
+    flex: 0 0 auto;
+    overflow: hidden;
+}
+
+.album_cover::after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    inset: 45% 0 0;
+    background: linear-gradient(0deg, rgb(15 20 17 / 65%), transparent);
+    pointer-events: none;
+}
+
+.album_cover img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.album_cover_placeholder {
+    display: grid;
+    place-items: center;
+    background: linear-gradient(145deg, #e5e8e1, #cbd3c9);
+    color: var(--color-accent-dark);
+    font-family: var(--font-heading);
+    font-size: clamp(1.25rem, 2vw, 1.65rem);
+}
+
+.album_cover_placeholder > span {
+    padding: 1rem;
+    border-bottom: 1px solid currentColor;
+}
+
+.album_cover_year {
+    position: absolute;
+    z-index: 2;
+    right: clamp(1rem, 2.5vw, 1.75rem);
+    bottom: clamp(0.8rem, 2vw, 1.4rem);
+    left: clamp(1rem, 2.5vw, 1.75rem);
+    margin: 0;
+    color: white;
+    font-size: clamp(2.25rem, 4.5vw, 3.8rem);
+    text-shadow: 0 0.2rem 1.5rem rgb(0 0 0 / 55%);
+}
+
+.album_content {
+    height: 100%;
+    padding: clamp(1.25rem, 2.5vw, 2rem);
+    display: flex;
+    flex-direction: column;
+}
+
+.album_spotify,
+.spotify_placeholder {
+    width: 100%;
+    height: 352px;
+    margin-top: auto;
+    border-radius: 0.75rem;
+}
+
+.album_spotify {
+    border: 0;
+}
+
+.spotify_placeholder {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 1rem;
-}
-
-.spotify_player iframe {
-    width: 100%;
-    height: 352px;
-    border: 0;
-    border-radius: 0.75rem;
-}
-
-.text_link {
+    gap: 0.75rem;
+    border: 1px dashed rgb(49 91 74 / 40%);
+    background: var(--color-tinted);
+    color: var(--color-accent-dark);
     font-weight: 700;
 }
 
-.cd_card {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-}
-
-.cd_card p:not(.eyebrow),
 .info_card p {
     color: var(--color-muted);
 }
 
-.cd_card .button,
 .info_card .button {
     margin-top: 0.5rem;
 }
@@ -596,11 +717,31 @@ address {
 }
 
 @media (max-width: 50rem) {
-    .music_grid,
     .performance_grid {
         grid-template-columns: 1fr;
     }
 
+    .music_grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .album_card:last-child {
+        grid-column: 1 / -1;
+        width: min(100%, calc((100% - clamp(1.25rem, 3vw, 2rem)) / 2));
+        justify-self: center;
+    }
+
+}
+
+@media (max-width: 34rem) {
+    .music_grid {
+        grid-template-columns: 1fr;
+    }
+
+    .album_card:last-child {
+        grid-column: auto;
+        width: 100%;
+    }
 }
 
 @media (max-width: 44rem) {
@@ -716,8 +857,17 @@ address {
         pointer-events: auto;
     }
 
-    .hero_image {
-        max-height: none;
+    .hero_title {
+        padding-bottom: clamp(1rem, 4vw, 2rem);
+    }
+
+    .hero_title h1 {
+        max-width: 9ch;
+        font-size: clamp(2.55rem, 12vw, 4.25rem);
+    }
+
+    .section_scroll_heading {
+        bottom: clamp(1rem, 4vw, 2rem);
     }
 
     .section_visual {
@@ -748,5 +898,15 @@ address {
         scroll-behavior: auto !important;
         transition-duration: 0.01ms !important;
         animation-duration: 0.01ms !important;
+    }
+
+    .hero_title {
+        opacity: 1;
+        transform: none;
+    }
+
+    .section_scroll_heading {
+        opacity: 1;
+        transform: none;
     }
 }

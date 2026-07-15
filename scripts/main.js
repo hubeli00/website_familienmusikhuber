@@ -1,5 +1,44 @@
 const menuButton = document.querySelector('.menu_button');
 const navigation = document.querySelector('#main_navigation');
+const hero = document.querySelector('.hero');
+const scrollingSectionHeadings = [...document.querySelectorAll('.section_scroll_heading')];
+
+if ((hero || scrollingSectionHeadings.length) && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  let scrollUpdatePending = false;
+
+  const updateScrollingTitles = () => {
+    if (hero) {
+      const fadeDistance = Math.max(hero.offsetHeight * 0.55, 240);
+      const progress = Math.min(Math.max(window.scrollY / fadeDistance, 0), 1);
+      hero.style.setProperty('--hero-title-progress', progress.toFixed(3));
+    }
+
+    scrollingSectionHeadings.forEach((heading) => {
+      const visual = heading.closest('.section_visual');
+      const visualRect = visual.getBoundingClientRect();
+      const fadeDistance = Math.max(visualRect.height * 0.55, 240);
+      const progress = Math.min(Math.max((varHeaderHeight() - visualRect.top) / fadeDistance, 0), 1);
+      heading.style.setProperty('--section-title-progress', progress.toFixed(3));
+    });
+
+    scrollUpdatePending = false;
+  };
+
+  const varHeaderHeight = () => {
+    const value = getComputedStyle(document.documentElement).getPropertyValue('--header-height');
+    return Number.parseFloat(value) * Number.parseFloat(getComputedStyle(document.documentElement).fontSize);
+  };
+
+  const requestHeroTitleUpdate = () => {
+    if (scrollUpdatePending) return;
+    scrollUpdatePending = true;
+    window.requestAnimationFrame(updateScrollingTitles);
+  };
+
+  updateScrollingTitles();
+  window.addEventListener('scroll', requestHeroTitleUpdate, { passive: true });
+  window.addEventListener('resize', requestHeroTitleUpdate);
+}
 
 function closeMenu({ returnFocus = false } = {}) {
   if (!menuButton || !navigation) return;
