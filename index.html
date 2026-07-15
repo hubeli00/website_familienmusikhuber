@@ -2,130 +2,290 @@
 <html lang="de">
 
 <head>
-
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-RY5DB5X3VH"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-RY5DB5X3VH');
-</script>
-
-  <title>Familienmusik Huber</title>
-
-  <link rel="stylesheet" href="styles/style_general.css">
-
   <meta charset="utf-8">
-  <meta name="description" content="Authentische alpenländische Volksmusik">
-  <meta name="author" content="Elias Gabriel Huber">
-  <meta name="viewport" content="width=device-width; user-scalable=yes" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Familienmusik Huber – authentische alpenländische Volksmusik aus dem Ahrntal.">
+  <meta name="theme-color" content="#f7f5f0">
+  <link rel="canonical" href="https://familienmusikhuber.com/">
 
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:title" content="Familienmusik Huber">
+  <meta property="og:description" content="Authentische alpenländische Volksmusik aus dem Ahrntal.">
+  <meta property="og:url" content="https://familienmusikhuber.com/">
+  <meta property="og:image" content="https://familienmusikhuber.com/assets/images/FM_post-1200.jpg">
+
+  <title>Familienmusik Huber – Alpenländische Volksmusik</title>
+  <link rel="icon" href="images/icons/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles/style_general.css">
+  <script>document.documentElement.classList.add('js');</script>
+  <script src="scripts/main.js" defer></script>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MusicGroup",
+      "name": "Familienmusik Huber",
+      "description": "Authentische alpenländische Volksmusik aus dem Ahrntal.",
+      "url": "https://familienmusikhuber.com/",
+      "image": "https://familienmusikhuber.com/assets/images/FM_post-1200.jpg",
+      "email": "familienmusik.huber@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Weißenbachstraße 25A",
+        "postalCode": "39030",
+        "addressLocality": "Luttach/Ahrntal",
+        "addressCountry": "IT"
+      },
+      "sameAs": [
+        "https://www.facebook.com/familienmusikhuber/",
+        "https://open.spotify.com/artist/44bS2VKc0BTSJ9ghtnLd1g"
+      ]
+    }
+  </script>
 </head>
 
 <body>
+  <a class="skip_link" href="#main">Zum Inhalt springen</a>
 
-  <header>
-
+  <header class="site_header">
+    <nav class="navbar" aria-label="Hauptnavigation">
+      <a class="navbar_brand" href="#front">Familienmusik Huber</a>
+      <button class="menu_button" type="button" aria-expanded="false" aria-controls="main_navigation">
+        <span class="menu_button_label">Menü</span>
+        <span class="menu_icon" aria-hidden="true"></span>
+      </button>
+      <div id="main_navigation" class="navbar_links">
+        <a href="#about">Über uns</a>
+        <a href="#music">Unsere Musik</a>
+        <a href="#dates">Termine</a>
+        <a href="#contact">Kontakt</a>
+      </div>
+    </nav>
   </header>
 
- 
-  <nav id="navbar_desktop" class="navbar_desktop">
-    <a id="navbar_desktop_heading" href="#front" class="nav_desk_element">Familienmusik Huber</a>
-    <a href="#about" class="nav_desk_element">Wir</a>
-    <a href="#music" class="nav_desk_element">Musik</a>
-    <a href="#contact" class="nav_desk_element">Kontakt</a>
-  </nav>
+  <main id="main">
+    <section id="front" class="hero" aria-label="Familienmusik Huber">
+      <picture>
+        <source
+          type="image/avif"
+          srcset="assets/images/FM_post-640.avif 640w, assets/images/FM_post-1200.avif 1200w, assets/images/FM_post-2000.avif 2000w"
+          sizes="100vw"
+        >
+        <source
+          type="image/webp"
+          srcset="assets/images/FM_post-640.webp 640w, assets/images/FM_post-1200.webp 1200w, assets/images/FM_post-2000.webp 2000w"
+          sizes="100vw"
+        >
+        <img
+          class="hero_image"
+          src="assets/images/FM_post-2000.jpg"
+          srcset="assets/images/FM_post-640.jpg 640w, assets/images/FM_post-1200.jpg 1200w, assets/images/FM_post-2000.jpg 2000w"
+          sizes="100vw"
+          alt="Die sechs Mitglieder der Familienmusik Huber in Tracht mit ihren Instrumenten vor einer Holzwand"
+          width="2000"
+          height="1500"
+          fetchpriority="high"
+        >
+      </picture>
+    </section>
 
-  <nav id="navbar_mobile" class="navbar_mobile">
-    <a id="navbar_mobile_heading" href="#front" class="nav_mob_element">Familienmusik Huber</a>
-  </nav>
+    <section class="intro section_compact" aria-labelledby="page_title">
+      <div class="content_container intro_inner">
+        <p class="eyebrow">Aus dem Ahrntal</p>
+        <h1 id="page_title">Familienmusik Huber</h1>
+        <p class="lead">Authentische alpenländische Volksmusik, gemeinsam gewachsen und mit Freude gespielt.</p>
+      </div>
+    </section>
 
-  <section id="front" class="section">
-    
-  </section>
-  
+    <section id="about" class="content_section" aria-labelledby="about_title">
+      <div class="section_visual">
+        <picture class="section_picture">
+        <source
+          type="image/avif"
+          srcset="assets/images/FM_doc-640.avif 640w, assets/images/FM_doc-1200.avif 1200w, assets/images/FM_doc-2000.avif 2000w"
+          sizes="(max-width: 1200px) 100vw, 1200px"
+        >
+        <source
+          type="image/webp"
+          srcset="assets/images/FM_doc-640.webp 640w, assets/images/FM_doc-1200.webp 1200w, assets/images/FM_doc-2000.webp 2000w"
+          sizes="(max-width: 1200px) 100vw, 1200px"
+        >
+        <img
+          src="assets/images/FM_doc-1200.jpg"
+          srcset="assets/images/FM_doc-640.jpg 640w, assets/images/FM_doc-1200.jpg 1200w, assets/images/FM_doc-2000.jpg 2000w"
+          sizes="(max-width: 1200px) 100vw, 1200px"
+          alt="Familienmusik Huber mit ihren Instrumenten in einem historischen Raum"
+          width="1200"
+          height="800"
+          loading="lazy"
+        >
+        </picture>
+        <div class="section_visual_heading">
+          <p class="eyebrow">Gemeinsam gewachsen</p>
+          <h2 id="about_title">Über uns</h2>
+        </div>
+      </div>
 
-  <section id="about" class="section">
-    <h2 class="section_content_h2">Über uns</h2>
-    <hr class="section_divider">
-    <p class="section_content_paragraph">
-      Wann wir damit begonnen haben gemeinsam zu musizieren, wissen wir nicht mehr.
-      Man könnte fast schon sagen, es ist einfach passiert. 
-      Der Grundstein war durch frühes gemeinsames Singen gelegt, nach und nach stießen erste Streichertöne hinzu. 
-      Kleinere Familienfeiern, Kindergottesdienste oder einfach nur regnerische Nachmittage boten früh Gelegenheit, 
-      uns auszuprobieren. <br>
-      Als wir 2010 zum ersten Mal die Alpenländische Sing- und Musizierwoche am Ritten besuchten, 
-      zog uns die Alpenländische Volksmusik endgültig in ihren Bann und wir begannen, regelmäßiger und intensiver 
-      als Familie zu musizieren. 
-      Nach unseren jeweiligen Möglichkeiten und Fähigkeiten weiteten wir Besetzung und Repertoire aus und 
-      so wie die Kinder wuchsen auch Fertigkeiten und Begeisterung. <br>
-      Die Woche am Ritten wurde zum Pflichttermin. Gerade dort haben wir nämlich im Laufe der Zeit 
-      unsere wichtigsten musikalischen Wegbegleiter gefunden und enge Freundschaften geknüpft. 
-      Genauso angetan hat es uns der Alpenländische Volksmusikwettbewerb, an dem wir 2016 teilnehmen durften 
-      und im Rahmen dessen wir zu unserer großen Freude und Überraschung mit dem Herma-Haselsteiner-Preis ausgezeichnet wurden. <br> <br>
-      In der Zeit danach konnten wir bei zahlreichen größeren Veranstaltungen mitwirken. 
-      Gerade nun, da wir begannen uns örtlich voneinander zu entfernen und das regelmäßige 
-      gemeinsame Musizieren seltener und schwieriger wurde, boten diese besondere und willkommene Gelegenheit, 
-      unser Repertoire zu erweitern und immer wieder neue
-      Besetzungen auszuprobieren. <br>
-      Im Laufe der Jahre konnten wir als Familienmusik zahlreiche Erfahrungen machen und Erinnerungen sammeln, 
-      die uns immer weiter zusammen- und aneinander wachsen ließen. 
-      Gemeinsame Ausflüge, Spielereien, Seminare und ausgedehnte Autofahrten, vollbeladen mit Instrumenten, bleiben wohl unvergesslich! <br>
-      Wir sind dankbar für die vielen gemeinsamen musikalischen Erlebnisse und freuen uns auf viele weitere! 
-    </p>
-  </section>
+      <div class="section">
+        <div class="content_container">
+        <div class="about_intro prose">
+          <p class="lead_small">Wann wir damit begonnen haben gemeinsam zu musizieren, wissen wir nicht mehr. Man könnte fast schon sagen: Es ist einfach passiert.</p>
+          <p>Der Grundstein war durch frühes gemeinsames Singen gelegt, nach und nach stießen erste Streichertöne hinzu. Familienfeiern, Kindergottesdienste und regnerische Nachmittage boten früh Gelegenheit, uns auszuprobieren.</p>
+        </div>
 
-  <section id="picture" class="section">
-    
-  </section>
+        <div class="story prose">
+          <p>Als wir 2010 zum ersten Mal die Alpenländische Sing- und Musizierwoche am Ritten besuchten, zog uns die alpenländische Volksmusik endgültig in ihren Bann. Wir begannen, regelmäßiger und intensiver als Familie zu musizieren. Mit den Kindern wuchsen auch Besetzung, Repertoire, Fertigkeiten und Begeisterung.</p>
+          <p>Die Woche am Ritten wurde zum Pflichttermin. Dort fanden wir unsere wichtigsten musikalischen Wegbegleiter und knüpften enge Freundschaften. 2016 durften wir am Alpenländischen Volksmusikwettbewerb teilnehmen und wurden zu unserer großen Freude mit dem Herma-Haselsteiner-Preis ausgezeichnet.</p>
+          <p>Seither konnten wir bei zahlreichen größeren Veranstaltungen mitwirken, neue Besetzungen ausprobieren und unser Repertoire erweitern. Gemeinsame Ausflüge, Spielereien, Seminare und vollbeladene Autofahrten bleiben unvergesslich. Wir sind dankbar für die vielen musikalischen Erlebnisse und freuen uns auf viele weitere.</p>
+        </div>
 
-  <section id="music" class="section">
-    <h2 class="section_content_h2">Unsere Musik</h2>
-    <hr class="section_divider">
-    <iframe id="iframe_spotify" src="https://open.spotify.com/embed/artist/44bS2VKc0BTSJ9ghtnLd1g?utm_source=generator&theme=0"
-      frameborder="0"
-      allowfullscreen
-      allow="autoplay"
-      clipboard-write 
-      encrypted-media
-      fullscreen
-      picture-in-picture
-      loading="lazy"
-     >
-    </iframe>
+        </div>
+      </div>
+    </section>
+
+    <section id="music" class="music_section" aria-labelledby="music_title">
+      <div class="section_visual">
+        <picture class="section_picture section_picture_square">
+        <source
+          type="image/avif"
+          srcset="assets/images/FM_luch-640.avif 640w, assets/images/FM_luch-1200.avif 1200w, assets/images/FM_luch-2000.avif 2000w"
+          sizes="(max-width: 1200px) 100vw, 1200px"
+        >
+        <source
+          type="image/webp"
+          srcset="assets/images/FM_luch-640.webp 640w, assets/images/FM_luch-1200.webp 1200w, assets/images/FM_luch-2000.webp 2000w"
+          sizes="(max-width: 1200px) 100vw, 1200px"
+        >
+        <img
+          src="assets/images/FM_luch-1200.jpg"
+          srcset="assets/images/FM_luch-640.jpg 640w, assets/images/FM_luch-1200.jpg 1200w, assets/images/FM_luch-2000.jpg 2000w"
+          sizes="(max-width: 1200px) 100vw, 1200px"
+          alt="Familienmusik Huber in Tracht mit ihren Instrumenten vor einer Berglandschaft"
+          width="1200"
+          height="1200"
+          loading="lazy"
+        >
+        </picture>
+        <div class="section_visual_heading">
+          <p class="eyebrow">Zum Anhören</p>
+          <h2 id="music_title">Unsere Musik</h2>
+        </div>
+      </div>
+
+      <div class="section section_tinted">
+        <div class="content_container">
+          <p class="section_intro">Eine Auswahl unserer Musik finden Sie direkt hier und auf Spotify.</p>
+
+          <div class="music_grid">
+            <div class="media_card spotify_player">
+              <iframe
+                title="Familienmusik Huber auf Spotify"
+                src="https://open.spotify.com/embed/artist/44bS2VKc0BTSJ9ghtnLd1g?utm_source=generator&amp;theme=0"
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy"
+              ></iframe>
+              <a class="text_link" href="https://open.spotify.com/intl-de/artist/44bS2VKc0BTSJ9ghtnLd1g">Direkt zu Spotify</a>
+            </div>
+
+            <aside class="media_card cd_card" aria-labelledby="cd_title">
+              <p class="eyebrow">CD</p>
+              <h3 id="cd_title">Unsere Musik für zu Hause</h3>
+              <p>Sie interessieren sich für unsere CD? Schreiben Sie uns gerne – wir geben Ihnen persönlich Auskunft.</p>
+              <a class="button button_secondary" href="mailto:familienmusik.huber@gmail.com?subject=Anfrage%20zur%20CD">CD anfragen</a>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="dates" class="content_section" aria-labelledby="dates_title">
+      <div class="section_visual">
+        <picture class="section_picture">
+        <source type="image/avif" srcset="assets/images/FM_post-640.avif 640w, assets/images/FM_post-1200.avif 1200w, assets/images/FM_post-2000.avif 2000w" sizes="(max-width: 1200px) 100vw, 1200px">
+        <source type="image/webp" srcset="assets/images/FM_post-640.webp 640w, assets/images/FM_post-1200.webp 1200w, assets/images/FM_post-2000.webp 2000w" sizes="(max-width: 1200px) 100vw, 1200px">
+        <img src="assets/images/FM_post-1200.jpg" srcset="assets/images/FM_post-640.jpg 640w, assets/images/FM_post-1200.jpg 1200w, assets/images/FM_post-2000.jpg 2000w" sizes="(max-width: 1200px) 100vw, 1200px" alt="Familienmusik Huber in Tracht mit ihren Instrumenten vor einer Holzwand" width="1200" height="900" loading="lazy">
+        </picture>
+        <div class="section_visual_heading">
+          <p class="eyebrow">Live erleben</p>
+          <h2 id="dates_title">Termine</h2>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="content_container">
+        <p class="section_intro">Für Informationen zu kommenden Auftritten und musikalischen Anfragen nehmen Sie gerne direkt Kontakt mit uns auf.</p>
+
+        <div class="performance_grid">
+          <article class="info_card">
+            <h3>Kommende Termine</h3>
+            <p class="empty_state">Derzeit sind keine öffentlichen Termine eingetragen.</p>
+          </article>
+          <article class="info_card info_card_accent">
+            <h3>Musikalische Anfrage</h3>
+            <p>Sie möchten uns für eine Veranstaltung anfragen? Schreiben Sie uns mit Datum, Ort und Anlass.</p>
+            <a class="button button_primary" href="mailto:familienmusik.huber@gmail.com?subject=Auftrittsanfrage">Auftritt anfragen</a>
+          </article>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="content_section" aria-labelledby="contact_title">
+      <div class="section_visual">
+        <picture class="section_picture">
+        <source type="image/avif" srcset="assets/images/FM_doc-640.avif 640w, assets/images/FM_doc-1200.avif 1200w, assets/images/FM_doc-2000.avif 2000w" sizes="(max-width: 1200px) 100vw, 1200px">
+        <source type="image/webp" srcset="assets/images/FM_doc-640.webp 640w, assets/images/FM_doc-1200.webp 1200w, assets/images/FM_doc-2000.webp 2000w" sizes="(max-width: 1200px) 100vw, 1200px">
+        <img src="assets/images/FM_doc-1200.jpg" srcset="assets/images/FM_doc-640.jpg 640w, assets/images/FM_doc-1200.jpg 1200w, assets/images/FM_doc-2000.jpg 2000w" sizes="(max-width: 1200px) 100vw, 1200px" alt="Familienmusik Huber gemeinsam in einem historischen Raum" width="1200" height="800" loading="lazy">
+        </picture>
+        <div class="section_visual_heading">
+          <p class="eyebrow">Wir freuen uns, von Ihnen zu hören</p>
+          <h2 id="contact_title">Kontakt</h2>
+        </div>
+      </div>
+
+      <div class="section section_tinted">
+        <div class="content_container contact_container">
+        <address>
+          <strong>Familienmusik Huber</strong><br>
+          Weißenbachstraße 25A<br>
+          39030 Luttach/Ahrntal (I)
+        </address>
+        <a class="button button_primary" href="mailto:familienmusik.huber@gmail.com">E-Mail schreiben</a>
+
+        <div class="social_links" aria-label="Soziale Medien">
+          <a href="https://www.facebook.com/familienmusikhuber/">
+            <img src="images/icons/facebook.svg" alt="" width="24" height="24">
+            <span>Facebook</span>
+          </a>
+          <a href="https://www.youtube.com/results?search_query=familienmusik+huber">
+            <img src="images/icons/youtube.svg" alt="" width="24" height="24">
+            <span>YouTube</span>
+          </a>
+          <a href="https://open.spotify.com/intl-de/artist/44bS2VKc0BTSJ9ghtnLd1g">
+            <img src="images/icons/spotify.svg" alt="" width="24" height="24">
+            <span>Spotify</span>
+          </a>
+        </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site_footer">
+    <div class="footer_inner">
+      <p><strong>Familienmusik Huber</strong><br><span>Alpenländische Volksmusik aus dem Ahrntal</span></p>
+      <nav aria-label="Navigation im Fußbereich">
+        <a href="#about">Über uns</a>
+        <a href="#music">Unsere Musik</a>
+        <a href="#dates">Termine</a>
+        <a href="#contact">Kontakt</a>
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+      </nav>
+      <p class="copyright">© <span data-current-year>2026</span> Familienmusik Huber</p>
     </div>
-  </section>
-
-  <section id="contact" class="section">
-    <h2 class="section_content_h2">Kontakt</h2>
-    <hr class="section_divider">
-    <p class="section_content_paragraph section_content_paragraph_short">
-      Sie erreichen uns unter: <br> <br>
-      Familienmusik Huber <br>
-      Weißenbachstraße 25A <br>
-      39030 Luttach/Ahrntal (I) <br>
-
-      familienmusik.huber@gmail.com
-    </p>
-    <div id="contact_iconbar">
-      <a id="contact_iconbar_facebook" href="https://www.facebook.com/familienmusikhuber/" class="contact_iconbar_icon">
-        <img src="images/icon_facebook.png" alt="Facebook-Logo" height="50px" width="50px">
-      </a>
-      <a id="contact_iconbar_youtube" href="https://www.youtube.com/results?search_query=familienmusik+huber" class="contact_iconbar_icon">
-        <img src="images/icon_youtube.png" alt="Youtube-Logo" height="50px" width="50px">
-      </a>
-      <a id="contact_iconbar_spotify" href="https://open.spotify.com/intl-de/artist/44bS2VKc0BTSJ9ghtnLd1g?si=1EWTbMjOQPGNfJXbpFpBRg" class="contact_iconbar_icon">
-        <img src="images/icon_spotify.png" alt="Spotify-Logo" height="50px" width="50px">
-      </a>
-    </div>
-  </section>
-
-  
-
+  </footer>
 </body>
 
-</body>
-</body>
 </html>

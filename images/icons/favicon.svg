@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Familienmusik Huber">
+  <rect width="64" height="64" rx="12" fill="#315b4a"/>
+  <path d="M18 48V16h22v7H26v7h12v7H26v11z" fill="#fffdf9"/>
+  <path d="M43 16v32h-7V16z" fill="#d9b35d"/>
+</svg>
