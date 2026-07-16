@@ -100,3 +100,72 @@ if ('IntersectionObserver' in window && observedSections.length) {
 document.querySelectorAll('[data-current-year]').forEach((element) => {
   element.textContent = new Date().getFullYear();
 });
+
+const eventEntries = document.querySelector('#event_entries');
+
+if (eventEntries && typeof events !== 'undefined') {
+  const sortedEvents = [...events].sort((eventA, eventB) => {
+    const dateTimeA = `${eventA.date}T${eventA.time}`;
+    const dateTimeB = `${eventB.date}T${eventB.time}`;
+    return dateTimeA.localeCompare(dateTimeB);
+  });
+
+  if (!sortedEvents.length) {
+    const emptyState = document.createElement('p');
+    emptyState.className = 'empty_state';
+    emptyState.textContent = 'Derzeit sind keine öffentlichen Termine eingetragen.';
+    eventEntries.append(emptyState);
+  }
+
+  const monthAndYearFormatter = new Intl.DateTimeFormat('de-DE', {
+    month: 'long',
+    year: 'numeric'
+  });
+
+  sortedEvents.forEach((event) => {
+    const eventDateValue = new Date(`${event.date}T00:00:00`);
+    const eventEntry = document.createElement('article');
+    eventEntry.className = 'event_entry';
+
+    const eventDate = document.createElement('time');
+    eventDate.className = 'event_date';
+    eventDate.dateTime = event.date;
+
+    const eventDay = document.createElement('span');
+    eventDay.textContent = `${String(eventDateValue.getDate()).padStart(2, '0')}.`;
+    eventDate.append(eventDay, document.createTextNode(monthAndYearFormatter.format(eventDateValue)));
+
+    const eventContent = document.createElement('div');
+    eventContent.className = 'event_content';
+
+    const eventTitle = document.createElement('h4');
+    eventTitle.textContent = event.title;
+
+    const eventMeta = document.createElement('p');
+    eventMeta.className = 'event_meta';
+
+    const eventTime = document.createElement('time');
+    eventTime.dateTime = event.time;
+    eventTime.textContent = `${event.time} Uhr`;
+
+    const separator = document.createElement('span');
+    separator.setAttribute('aria-hidden', 'true');
+    separator.textContent = '·';
+
+    const eventLocation = document.createElement('span');
+    eventLocation.textContent = event.location;
+    eventMeta.append(eventTime, separator, eventLocation);
+    eventContent.append(eventTitle, eventMeta);
+
+    if (event.link) {
+      const eventLink = document.createElement('a');
+      eventLink.className = 'event_link';
+      eventLink.href = event.link;
+      eventLink.textContent = 'Weitere Informationen';
+      eventContent.append(eventLink);
+    }
+
+    eventEntry.append(eventDate, eventContent);
+    eventEntries.append(eventEntry);
+  });
+}

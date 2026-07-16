@@ -19,6 +19,7 @@
   <link rel="icon" href="images/icons/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles/style_general.css">
   <script>document.documentElement.classList.add('js');</script>
+  <script src="scripts/events.js" defer></script>
   <script src="scripts/main.js" defer></script>
 
   <script type="application/ld+json">
@@ -235,19 +236,10 @@
 
       <div class="section">
         <div class="content_container">
-        <p class="section_intro">Für Informationen zu kommenden Auftritten und musikalischen Anfragen nehmen Sie gerne direkt Kontakt mit uns auf.</p>
-
-        <div class="performance_grid">
-          <article class="info_card">
-            <h3>Kommende Termine</h3>
-            <p class="empty_state">Derzeit sind keine öffentlichen Termine eingetragen.</p>
-          </article>
-          <article class="info_card info_card_accent">
-            <h3>Musikalische Anfrage</h3>
-            <p>Sie möchten uns für eine Veranstaltung anfragen? Schreiben Sie uns mit Datum, Ort und Anlass.</p>
-            <a class="button button_primary" href="mailto:familienmusik.huber@gmail.com?subject=Auftrittsanfrage">Auftritt anfragen</a>
-          </article>
-        </div>
+        <section class="events_list" aria-labelledby="upcoming_dates_title">
+          <h3 id="upcoming_dates_title">Kommende Termine</h3>
+          <div id="event_entries"></div>
+        </section>
         </div>
       </div>
     </section>
@@ -270,9 +262,16 @@
         <address>
           <strong>Familienmusik Huber</strong><br>
           Weißenbachstraße 25A<br>
-          39030 Luttach/Ahrntal (I)
+          39030 Luttach/Ahrntal (I)<br>
+          <a href="mailto:familienmusik.huber@gmail.com">familienmusik.huber@gmail.com</a>
         </address>
         <a class="button button_primary" href="mailto:familienmusik.huber@gmail.com">E-Mail schreiben</a>
+
+        <article class="info_card info_card_accent">
+          <h3>Musikalische Anfrage</h3>
+          <p>Sie möchten uns für eine Veranstaltung anfragen? Schreiben Sie uns mit Datum, Ort und Anlass.</p>
+          <a class="button button_primary" href="mailto:familienmusik.huber@gmail.com?subject=Auftrittsanfrage">Auftritt anfragen</a>
+        </article>
 
         <div class="social_links" aria-label="Soziale Medien">
           <a href="https://www.facebook.com/familienmusikhuber/">
