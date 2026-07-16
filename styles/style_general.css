@@ -385,6 +385,11 @@ p {
     margin-inline: auto;
 }
 
+.about_intro strong {
+    color: var(--color-text);
+    font-weight: 650;
+}
+
 .story {
     max-width: var(--text-width);
     margin: clamp(3.5rem, 7vw, 6.5rem) auto 0;
@@ -470,6 +475,11 @@ p {
     color: var(--color-muted);
     font-size: clamp(1.05rem, 2vw, 1.2rem);
     text-align: center;
+}
+
+.music_intro {
+    max-width: var(--text-width);
+    margin: 0 auto clamp(2.5rem, 5vw, 4rem);
 }
 
 .music_grid,
@@ -775,6 +785,12 @@ address {
     padding: 1.2rem 1.4rem;
     border-left: 4px solid var(--color-focus);
     background: #fff5ef;
+}
+
+@media (min-width: 44.01rem) and (min-height: 35rem) and (orientation: landscape) {
+    .section_visual {
+        min-height: calc(100svh - var(--header-height));
+    }
 }
 
 @media (max-width: 50rem) {
