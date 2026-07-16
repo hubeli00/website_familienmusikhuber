@@ -966,16 +966,16 @@ address {
 
 @media (max-width: 44rem) and (orientation: portrait) {
     .section_visual {
-        min-height: 50svh;
+        min-height: 105vw;
     }
 
     #about .section_visual,
     #contact .section_visual {
-        min-height: 45svh;
+        min-height: 95vw;
     }
 
     #dates .section_visual {
-        min-height: 40svh;
+        min-height: 85vw;
     }
 
     #about .section_picture img,
