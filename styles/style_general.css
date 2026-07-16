@@ -964,6 +964,26 @@ address {
     }
 }
 
+@media (max-width: 44rem) and (orientation: portrait) {
+    .section_visual {
+        min-height: 50svh;
+    }
+
+    #about .section_visual,
+    #contact .section_visual {
+        min-height: 45svh;
+    }
+
+    #dates .section_visual {
+        min-height: 40svh;
+    }
+
+    #about .section_picture img,
+    #contact .section_picture img {
+        object-position: 30% center;
+    }
+}
+
 @media (prefers-reduced-motion: reduce) {
     html {
         scroll-behavior: auto;
