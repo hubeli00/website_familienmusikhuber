@@ -71,7 +71,7 @@ if (menuButton && navigation) {
   });
 }
 
-const navigationLinks = [...document.querySelectorAll('.navbar_links a[href^="#"]')];
+const navigationLinks = [...document.querySelectorAll('.navbar a[href^="#"]')];
 const observedSections = navigationLinks
   .map((link) => document.querySelector(link.getAttribute('href')))
   .filter(Boolean);
