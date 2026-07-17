@@ -102,27 +102,37 @@ document.querySelectorAll('[data-current-year]').forEach((element) => {
 });
 
 const eventEntries = document.querySelector('#event_entries');
+const pastEventEntries = document.querySelector('#past_event_entries');
+const pastEventsSection = document.querySelector('#past_events');
 
-if (eventEntries && typeof events !== 'undefined') {
+if (pastEventsSection) {
+  const pastEventsSummary = pastEventsSection.querySelector('summary');
+
+  pastEventsSummary?.addEventListener('click', () => {
+    const summaryTop = pastEventsSummary.getBoundingClientRect().top;
+
+    window.requestAnimationFrame(() => {
+      const positionChange = pastEventsSummary.getBoundingClientRect().top - summaryTop;
+      if (positionChange) window.scrollBy(0, positionChange);
+    });
+  });
+}
+
+if (eventEntries && pastEventEntries && pastEventsSection && typeof events !== 'undefined') {
   const sortedEvents = [...events].sort((eventA, eventB) => {
     const dateTimeA = `${eventA.date}T${eventA.time}`;
     const dateTimeB = `${eventB.date}T${eventB.time}`;
     return dateTimeA.localeCompare(dateTimeB);
   });
+  const monthFormatter = new Intl.DateTimeFormat('de-DE', { month: 'long' });
+  const today = new Date();
+  const todayValue = [
+    today.getFullYear(),
+    String(today.getMonth() + 1).padStart(2, '0'),
+    String(today.getDate()).padStart(2, '0')
+  ].join('-');
 
-  if (!sortedEvents.length) {
-    const emptyState = document.createElement('p');
-    emptyState.className = 'empty_state';
-    emptyState.textContent = 'Derzeit sind keine öffentlichen Termine eingetragen.';
-    eventEntries.append(emptyState);
-  }
-
-  const monthAndYearFormatter = new Intl.DateTimeFormat('de-DE', {
-    month: 'long',
-    year: 'numeric'
-  });
-
-  sortedEvents.forEach((event) => {
+  const createEventEntry = (event) => {
     const eventDateValue = new Date(`${event.date}T00:00:00`);
     const eventEntry = document.createElement('article');
     eventEntry.className = 'event_entry';
@@ -132,8 +142,17 @@ if (eventEntries && typeof events !== 'undefined') {
     eventDate.dateTime = event.date;
 
     const eventDay = document.createElement('span');
+    eventDay.className = 'event_day';
     eventDay.textContent = `${String(eventDateValue.getDate()).padStart(2, '0')}.`;
-    eventDate.append(eventDay, document.createTextNode(monthAndYearFormatter.format(eventDateValue)));
+
+    const eventMonth = document.createElement('span');
+    eventMonth.className = 'event_month';
+    eventMonth.textContent = monthFormatter.format(eventDateValue);
+
+    const eventYear = document.createElement('span');
+    eventYear.className = 'event_year';
+    eventYear.textContent = eventDateValue.getFullYear();
+    eventDate.append(eventDay, eventMonth, eventYear);
 
     const eventContent = document.createElement('div');
     eventContent.className = 'event_content';
@@ -166,6 +185,23 @@ if (eventEntries && typeof events !== 'undefined') {
     }
 
     eventEntry.append(eventDate, eventContent);
-    eventEntries.append(eventEntry);
-  });
+    return eventEntry;
+  };
+
+  const upcomingEvents = sortedEvents.filter((event) => event.date >= todayValue);
+  const pastEvents = sortedEvents.filter((event) => event.date < todayValue).reverse();
+
+  if (upcomingEvents.length) {
+    upcomingEvents.forEach((event) => eventEntries.append(createEventEntry(event)));
+  } else {
+    const emptyState = document.createElement('p');
+    emptyState.className = 'empty_state';
+    emptyState.textContent = 'Derzeit sind keine öffentlichen Termine eingetragen.';
+    eventEntries.append(emptyState);
+  }
+
+  if (pastEvents.length) {
+    pastEventsSection.hidden = false;
+    pastEvents.forEach((event) => pastEventEntries.append(createEventEntry(event)));
+  }
 }

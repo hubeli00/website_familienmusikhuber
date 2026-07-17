@@ -627,7 +627,11 @@ p {
 }
 
 .events_list {
+    max-height: calc(100svh - var(--header-height) - 2rem);
     padding: clamp(0.5rem, 2vw, 1rem) 0;
+    padding-right: clamp(0.35rem, 1vw, 0.75rem);
+    overflow-y: auto;
+    scrollbar-gutter: stable;
 }
 
 .events_list > h3 {
@@ -652,15 +656,27 @@ p {
 
 .event_date {
     color: var(--color-accent-dark);
-    font-size: 0.9rem;
+    font-family: var(--font-heading);
     font-weight: 700;
-    line-height: 1.2;
+    line-height: 1.05;
 }
 
 .event_date span {
     display: block;
-    font-family: var(--font-heading);
+}
+
+.event_day {
     font-size: 1.4rem;
+}
+
+.event_month {
+    margin-top: 0.12rem;
+    font-size: 1.08rem;
+}
+
+.event_year {
+    margin-top: 0.1rem;
+    font-size: 1rem;
 }
 
 .event_content h4 {
@@ -681,6 +697,29 @@ p {
 .event_link {
     font-size: 0.95rem;
     font-weight: 700;
+}
+
+.past_events {
+    margin-top: 1.25rem;
+    overflow-anchor: none;
+}
+
+.past_events summary {
+    width: fit-content;
+    margin-bottom: 0.5rem;
+    color: var(--color-accent-dark);
+    font-family: var(--font-heading);
+    font-size: clamp(1.15rem, 2vw, 1.35rem);
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.past_events summary:hover {
+    text-decoration: underline;
+}
+
+.past_events[open] summary {
+    margin-bottom: 0;
 }
 
 .contact_container {

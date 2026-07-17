@@ -1,23 +1,125 @@
 const events = [
   {
-    title: 'Lecher Musikantentag',
-    date: '2026-07-25',
-    time: '11:00',
-    location: 'Mohnenfluh Oberlech',
-    link: 'https://www.lechzuers.com/de/events/musikantentag'
+    title: '"Ba Wege hi" - Dreikönigskonzert 2025',
+    date: '2025-01-05',
+    time: '18:00',
+    location: 'Pfarrkirche Maria Hilf Steinhaus',
+    link: ''
+  },
+  {
+    title: 'Festabend zur Verleihung des Pongauer Hahns 2025',
+    date: '2025-05-09',
+    time: '19:30',
+    location: 'JO Congress, St. Johann im Pongau (A)',
+    link: 'https://www.pongauer-hahn.at/images/plakat/plakat-2025.pdf'
+  },
+  {
+    title: '"Alles Lied" - Volksliedabend',
+    date: '2025-05-10',
+    time: '20:00',
+    location: 'Veransataltungszentrum, Breitenwang (A)',
+    link: ''
+  },
+  {
+    title: 'Weinmesse Salurn',
+    date: '2025-07-18',
+    time: '18:00',
+    location: 'Amalia Pernter 1896 Salurn',
+  },
+  {
+    title: 'Knödelfest Terenten',
+    date: '2025-08-17',
+    time: '10:00',
+    location: 'Spielplatz Terenten',
+  },
+  {
+    title: 'CD-Präsentation "Familienmusik Huber - Huber Viergsaong - Brunverdi"',
+    date: '2025-10-24',
+    time: '19:30',
+    location: 'Fritznerhof, Fritzens (A)',
+  },
+  {
+    title: 'CD-Präsentation "Familienmusik Huber - Huber Viergsaong - Brunverdi"',
+    date: '2025-10-25',
+    time: '19:00',
+    location: 'Mehrzweckgebäude, Luttach',
+  },
+  {
+    title: 'CD-Präsentation "Familienmusik Huber - Huber Viergsaong - Brunverdi"',
+    date: '2025-10-26',
+    time: '19:30',
+    location: 'Vereinshaus, Wangen',
+  },
+  {
+    title: 'Breitenwanger Adventskonzert',
+    date: '2025-11-29',
+    time: '19:00',
+    location: 'VZ Breitenwang, Tauernsaal (A)',
+  },
+  {
+    title: 'Advent im Gebirg',
+    date: '2025-11-30',
+    time: '15:30',
+    location: 'JO Congress, St. Johann im Pongau (A)',
+  },
+  {
+    title: 'Adventshuangort',
+    date: '2025-12-21',
+    time: '15:00',
+    location: 'Vereinshaus St. Leonhard in Passeier',
+  },
+  {
+    title: 'Weihnachtskonzert mit Unknown Brass',
+    date: '2025-12-30',
+    time: '20:45',
+    location: 'Pfarrkirche St. Johann im Ahrntal',
+  },
+  {
+    title: '"hoamwaschts" - Dreikönigskonzert 2026',
+    date: '2026-01-05',
+    time: '18:00',
+    location: 'Pfarrkirche Maria Hilf Steinhaus',
+  },
+  {
+    title: 'Jubiläumskonzert - Männerchor Olang',
+    date: '2026-05-09',
+    time: '20:00',
+    location: 'Kongresshaus Olang',
   },
   {
     title: 'ama Weinmesse Salurn',
     date: '2026-07-18',
     time: '18:00',
-    location: 'Amalia Pernter',
+    location: 'Amalia Pernter 1896 Salurn',
     link: ''
+  },
+  {
+    title: 'Lecher Musikantentag',
+    date: '2026-07-25',
+    time: '11:00',
+    location: 'Mohnenfluh, Oberlech (A)',
+    link: 'https://www.lechzuers.com/de/events/musikantentag'
   },
   {
     title: '"Neapolitanisch aufgspielt" - Innsbrucker Festwochen der Alten Musik',
     date: '2026-08-18',
     time: '20:00',
-    location: 'Tiroler Landestheater Innsbruck',
+    location: 'Tiroler Landestheater Innsbruck, Großes Haus (A)',
     link: 'https://www.altemusik.at/de/veranstaltungen/neapolitanisch-aufgspielt'
   },
+  {
+    title: '"Neapolitanisch aufgspielt" - Innsbrucker Festwochen der Alten Musik',
+    date: '2026-08-18',
+    time: '20:00',
+    location: 'Tiroler Landestheater Innsbruck, Großes Haus (A)',
+    link: 'https://www.altemusik.at/de/veranstaltungen/neapolitanisch-aufgspielt'
+  },
+  {
+    title: '"Neapolitanisch aufgspielt" - Innsbrucker Festwochen der Alten Musik',
+    date: '2026-08-18',
+    time: '20:00',
+    location: 'Tiroler Landestheater Innsbruck, Großes Haus (A)',
+    link: 'https://www.altemusik.at/de/veranstaltungen/neapolitanisch-aufgspielt'
+  },
+
 ];
