@@ -994,7 +994,8 @@ address {
     }
 
     .hero {
-        min-height: calc(100svh - var(--header-height));
+        min-height: calc(100svh - var(--header-height) + 2px);
+        min-height: calc(100dvh - var(--header-height) + 2px);
         display: flex;
         flex-direction: column;
         background: var(--color-background);
@@ -1100,7 +1101,8 @@ address {
     }
 
     .hero_title {
-        height: calc(100svh - var(--header-height) - 85vw);
+        height: calc(100svh - var(--header-height) - 85vw + 2px);
+        height: calc(100dvh - var(--header-height) - 85vw + 2px);
         padding-block: clamp(0.75rem, 3svh, 2rem);
         flex: 0 0 auto;
     }
