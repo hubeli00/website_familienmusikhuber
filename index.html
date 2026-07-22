@@ -178,47 +178,69 @@
       <div class="section section_tinted">
         <div class="content_container">
           <div class="music_intro prose">
+            <p>Vielfältige Besetzungen zeichnen unsere Musik aus: Mal erklingen unsere Streicher gemeinsam, mal setzen Blockflöte oder Violoncello besondere Akzente. So entstehen immer wieder neue Klangfarben, die zu den jeweiligen Stücken und Anlässen passen.</p>
+            <p>Außerdem singen wir sehr gerne und begleiten uns dabei selbst auf unseren Instrumenten. Unsere Musik ist auf allen gängigen Streamingportalen und auf YouTube zu hören.</p>
+          </div>
+
+          <div class="music_players">
+            <article class="music_player">
+              <h3>Spotify</h3>
+              <iframe
+                class="music_spotify"
+                title="Familienmusik Huber auf Spotify"
+                src="https://open.spotify.com/embed/artist/44bS2VKc0BTSJ9ghtnLd1g?utm_source=generator&amp;theme=0"
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy"
+              ></iframe>
+            </article>
+
+            <article class="music_player">
+              <h3>YouTube</h3>
+              <iframe
+                class="music_youtube"
+                title="Familienmusik Huber auf YouTube"
+                src="https://www.youtube-nocookie.com/embed/YVLahc4VnmA"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+                loading="lazy"
+              ></iframe>
+            </article>
+          </div>
+
+          <h3 id="cds_title" class="music_grid_title">CDs</h3>
+          <div class="cd_intro prose">
             <p>Im Jahr 2018 verwirklichten wir mit einer Weihnachts-CD unser erstes CD-Projekt. Darauf folgte 2020 eine Eigenproduktion, ehe zuletzt gemeinsam mit dem Huber Viergsong und Brunverdi eine weitere CD entstand.</p>
             <p>Wer unsere Musik gerne mit nach Hause nehmen möchte, kann die CDs bei uns anfragen und bestellen. Wir senden sie sehr gerne zu.</p>
           </div>
-
-          <div class="music_grid">
-            <article class="album_card">
-              <div class="album_cover">
-                <img src="assets/images/FM_post-640.jpg" alt="Vorläufiges Cover für Familienmusik Huber – Huber Viergsong – Brunverdi" width="640" height="480" loading="lazy">
-                <h3 class="album_cover_year">2025</h3>
-              </div>
-              <div class="album_content">
-                <div class="spotify_placeholder" aria-label="Spotify-Einbettung folgt">
-                  <img src="images/icons/spotify.svg" alt="" width="28" height="28">
-                  <span>Spotify-Link folgt</span>
+          <div class="music_grid_shell">
+            <div class="music_grid" aria-labelledby="cds_title">
+              <article class="album_card">
+                <div class="album_cover">
+                  <img src="images/CD_25.png" alt="CD-Cover Familienmusik Huber – Huber Viergsong – Brunverdi" width="1990" height="1791" loading="lazy">
+                  <h3 class="album_cover_year">2025</h3>
                 </div>
-              </div>
-            </article>
+              </article>
 
-            <article class="album_card">
-              <div class="album_cover">
-                <img src="assets/images/FM_luch-640.jpg" alt="Vorläufiges Cover für Familienmusik Huber" width="640" height="640" loading="lazy">
-                <h3 class="album_cover_year">2020</h3>
-              </div>
-              <div class="album_content">
-                <iframe
-                  class="album_spotify"
-                  title="Familienmusik Huber auf Spotify"
-                  src="https://open.spotify.com/embed/artist/44bS2VKc0BTSJ9ghtnLd1g?utm_source=generator&amp;theme=0"
-                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                  loading="lazy"
-                ></iframe>
-              </div>
-            </article>
+              <article class="album_card">
+                <div class="album_cover">
+                  <img src="images/CD_20.jpeg" alt="CD-Cover Familienmusik Huber" width="1910" height="1719" loading="lazy">
+                  <h3 class="album_cover_year">2020</h3>
+                </div>
+              </article>
 
-            <article class="album_card">
-              <div class="album_cover album_cover_placeholder">
-                <span>Cover folgt</span>
-                <h3 class="album_cover_year">2018</h3>
-              </div>
-            </article>
+              <article class="album_card">
+                <div class="album_cover">
+                  <img src="images/CD_19_w_focus.png" alt="CD-Cover Familienmusik Huber" width="1180" height="1062" loading="lazy">
+                  <h3 class="album_cover_year">2018</h3>
+                </div>
+              </article>
+            </div>
+            <button class="music_scroll_cue" type="button" aria-label="Weitere CDs anzeigen" data-visible="false">
+              <span aria-hidden="true"></span>
+            </button>
           </div>
+          <a class="button button_primary cd_request_button" href="#contact">CD Anfragen</a>
         </div>
       </div>
     </section>

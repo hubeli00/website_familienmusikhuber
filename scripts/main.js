@@ -101,6 +101,29 @@ document.querySelectorAll('[data-current-year]').forEach((element) => {
   element.textContent = new Date().getFullYear();
 });
 
+const musicGrid = document.querySelector('.music_grid');
+const musicScrollCue = document.querySelector('.music_scroll_cue');
+
+if (musicGrid && musicScrollCue) {
+  const updateMusicScrollCue = () => {
+    const scrollRemaining = musicGrid.scrollWidth - musicGrid.clientWidth - musicGrid.scrollLeft;
+    musicScrollCue.dataset.visible = String(musicGrid.scrollWidth > musicGrid.clientWidth + 1 && scrollRemaining > 1);
+  };
+
+  musicScrollCue.addEventListener('click', () => {
+    const albumCard = musicGrid.querySelector('.album_card');
+    const gridStyles = getComputedStyle(musicGrid);
+    const gap = Number.parseFloat(gridStyles.columnGap || gridStyles.gap) || 0;
+    const distance = (albumCard?.getBoundingClientRect().width || musicGrid.clientWidth) + gap;
+    const behavior = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
+    musicGrid.scrollBy({ left: distance, behavior });
+  });
+
+  musicGrid.addEventListener('scroll', updateMusicScrollCue, { passive: true });
+  window.addEventListener('resize', updateMusicScrollCue);
+  updateMusicScrollCue();
+}
+
 const eventEntries = document.querySelector('#event_entries');
 const pastEventEntries = document.querySelector('#past_event_entries');
 const pastEventsSection = document.querySelector('#past_events');
