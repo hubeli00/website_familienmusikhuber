@@ -94,14 +94,14 @@ const events = [
     link: ''
   },
   {
-    title: 'Lecher Musikantentag',
+    title: '19. Lecher Musikantentag',
     date: '2026-07-25',
     time: '11:00',
     location: 'Mohnenfluh, Oberlech (A)',
     link: 'https://www.lechzuers.com/de/events/musikantentag'
   },
   {
-    title: '"Neapolitanisch aufgspielt" - Innsbrucker Festwochen der Alten Musik',
+    title: '"Neapolitanisch aufg'spielt" - Innsbrucker Festwochen der Alten Musik',
     date: '2026-08-18',
     time: '20:00',
     location: 'Tiroler Landestheater Innsbruck, Großes Haus (A)',
