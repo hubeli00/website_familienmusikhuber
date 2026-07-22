@@ -21,7 +21,7 @@ const events = [
     link: ''
   },
   {
-    title: 'Weinmesse Salurn',
+    title: 'ama Weinmesse Salurn',
     date: '2025-07-18',
     time: '18:00',
     location: 'Amalia Pernter 1896 Salurn',
@@ -33,19 +33,19 @@ const events = [
     location: 'Spielplatz Terenten',
   },
   {
-    title: 'CD-Präsentation "Familienmusik Huber - Huber Viergsaong - Brunverdi"',
+    title: 'CD-Präsentation "Familienmusik Huber - Huber Viergsong - Brunverdi"',
     date: '2025-10-24',
     time: '19:30',
     location: 'Fritznerhof, Fritzens (A)',
   },
   {
-    title: 'CD-Präsentation "Familienmusik Huber - Huber Viergsaong - Brunverdi"',
+    title: 'CD-Präsentation "Familienmusik Huber - Huber Viergsong - Brunverdi"',
     date: '2025-10-25',
     time: '19:00',
     location: 'Mehrzweckgebäude, Luttach',
   },
   {
-    title: 'CD-Präsentation "Familienmusik Huber - Huber Viergsaong - Brunverdi"',
+    title: 'CD-Präsentation "Familienmusik Huber - Huber Viergsong - Brunverdi"',
     date: '2025-10-26',
     time: '19:30',
     location: 'Vereinshaus, Wangen',
@@ -107,19 +107,4 @@ const events = [
     location: 'Tiroler Landestheater Innsbruck, Großes Haus (A)',
     link: 'https://www.altemusik.at/de/veranstaltungen/neapolitanisch-aufgspielt'
   },
-  {
-    title: '"Neapolitanisch aufgspielt" - Innsbrucker Festwochen der Alten Musik',
-    date: '2026-08-18',
-    time: '20:00',
-    location: 'Tiroler Landestheater Innsbruck, Großes Haus (A)',
-    link: 'https://www.altemusik.at/de/veranstaltungen/neapolitanisch-aufgspielt'
-  },
-  {
-    title: '"Neapolitanisch aufgspielt" - Innsbrucker Festwochen der Alten Musik',
-    date: '2026-08-18',
-    time: '20:00',
-    location: 'Tiroler Landestheater Innsbruck, Großes Haus (A)',
-    link: 'https://www.altemusik.at/de/veranstaltungen/neapolitanisch-aufgspielt'
-  },
-
 ];
