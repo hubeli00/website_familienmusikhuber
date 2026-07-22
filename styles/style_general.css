@@ -460,6 +460,14 @@ p {
     object-position: center 62%;
 }
 
+#dates .section_picture img {
+    object-position: center 66%;
+}
+
+#contact .section_picture img {
+    object-position: 30% center;
+}
+
 .section_visual_heading {
     position: absolute;
     z-index: 2;
@@ -1311,8 +1319,16 @@ p {
         min-height: 85vw;
     }
 
-    #about .section_picture img,
+    #about .section_picture img {
+        object-position: 30% center;
+    }
+
+    #dates .section_picture img {
+        object-position: center 58%;
+    }
+
     #contact .section_picture img {
+        object-fit: cover;
         object-position: 30% center;
     }
 }
