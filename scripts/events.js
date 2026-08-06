@@ -101,7 +101,7 @@ const events = [
     link: 'https://www.lechzuers.com/de/events/musikantentag'
   },
   {
-    title: '"Neapolitanisch aufg'spielt" - Innsbrucker Festwochen der Alten Musik',
+    title: `"Neapolitanisch aufg'spielt" - Innsbrucker Festwochen der Alten Musik`,
     date: '2026-08-18',
     time: '20:00',
     location: 'Tiroler Landestheater Innsbruck, Großes Haus (A)',

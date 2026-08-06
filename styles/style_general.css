@@ -456,8 +456,144 @@ p {
     object-position: center;
 }
 
+.about_collage {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+}
+
+.about_portrait {
+    position: relative;
+    min-width: 0;
+    min-height: 0;
+    overflow: hidden;
+}
+
+.about_collage .about_portrait img {
+    position: absolute;
+    top: calc(50% + var(--portrait-y));
+    left: calc(50% + var(--portrait-x));
+    width: calc(100% * var(--portrait-zoom));
+    height: auto;
+    max-width: none;
+    object-fit: initial;
+    transform: translate(-50%, -50%);
+}
+
+/*
+ * Bildausschnitte im breiten 3x2-Raster:
+ * zoom: 1 = Originalbreite der Rasterzelle, größere Werte zoomen hinein.
+ * x: positive Werte verschieben das Bild nach rechts, negative nach links.
+ * y: positive Werte verschieben das Bild nach unten, negative nach oben.
+ */
+.about_portrait_andreas {
+    --portrait-zoom: 1.5;
+    --portrait-x: -5%;
+    --portrait-y: 40%;
+}
+
+.about_portrait_leah {
+    --portrait-zoom: 1.55;
+    --portrait-x: -10%;
+    --portrait-y: 45%;
+}
+
+.about_portrait_samuel {
+    --portrait-zoom: 1;
+    --portrait-x: 0%;
+    --portrait-y: 15%;
+}
+
+.about_portrait_esther {
+    --portrait-zoom: 1.15;
+    --portrait-x: 0%;
+    --portrait-y: 30%;
+}
+
+.about_portrait_elias {
+    --portrait-zoom: 1.4;
+    --portrait-x: 0%;
+    --portrait-y: 40%;
+}
+
+.about_portrait_judith {
+    --portrait-zoom: 1;
+    --portrait-x: 0%;
+    --portrait-y: 15%;
+}
+
+@media (orientation: portrait) {
+    #about .section_visual {
+        min-height: 150vw;
+    }
+
+    .about_collage {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: repeat(3, minmax(0, 1fr));
+    }
+
+    /* Separate Bildausschnitte und Reihenfolge im schmalen 2x3-Raster. */
+    .about_portrait_andreas {
+        --portrait-zoom: 1.9;
+        --portrait-x: -5%;
+        --portrait-y: 60%;
+        order: 1;
+    }
+
+    .about_portrait_leah {
+        --portrait-zoom: 1.95;
+        --portrait-x: -5%;
+        --portrait-y: 60%;
+        order: 2;
+    }
+
+    .about_portrait_esther {
+        --portrait-zoom: 1.4;
+        --portrait-x: 0%;
+        --portrait-y: 40%;
+        order: 3;
+    }
+
+    .about_portrait_samuel {
+        --portrait-zoom: 1.4;
+        --portrait-x: 0%;
+        --portrait-y: 30%;
+        order: 4;
+    }
+
+    .about_portrait_elias {
+        --portrait-zoom: 1.9;
+        --portrait-x: 0%;
+        --portrait-y: 55%;
+        order: 5;
+    }
+
+    .about_portrait_judith {
+        --portrait-zoom: 1.4;
+        --portrait-x: 0%;
+        --portrait-y: 25%;
+        order: 6;
+    }
+}
+
 .section_picture_square img {
     object-position: center 62%;
+}
+
+@media (orientation: landscape) {
+    #music .section_picture img {
+        object-position: center 25%;
+    }
+}
+
+@media (orientation: portrait) {
+    #music .section_picture img {
+        object-position: center 55%;
+    }
+
+    #contact .section_picture img {
+        transform: scale(1.2);
+    }
 }
 
 #dates .section_picture img {
@@ -1310,17 +1446,12 @@ p {
         min-height: 105vw;
     }
 
-    #about .section_visual,
     #contact .section_visual {
         min-height: 95vw;
     }
 
     #dates .section_visual {
         min-height: 85vw;
-    }
-
-    #about .section_picture img {
-        object-position: 30% center;
     }
 
     #dates .section_picture img {
