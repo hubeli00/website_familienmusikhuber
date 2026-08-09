@@ -1,14 +1,14 @@
 :root {
-    --color-background: #f7f5f0;
-    --color-surface: #fffdf9;
-    --color-tinted: #ecefe9;
-    --color-text: #252824;
-    --color-muted: #60665f;
-    --color-accent: #315b4a;
-    --color-accent-dark: #214437;
-    --color-border: rgb(37 40 36 / 14%);
-    --color-focus: #b7462f;
-    --shadow-soft: 0 1.25rem 3.5rem rgb(32 39 34 / 10%);
+    --color-background: #f4f0e8;
+    --color-surface: #fcf9f3;
+    --color-tinted: #e7e1d7;
+    --color-text: #172832;
+    --color-muted: #56636a;
+    --color-accent: #294b5b;
+    --color-accent-dark: #1b3542;
+    --color-border: rgb(23 40 50 / 15%);
+    --color-focus: #a13b48;
+    --shadow-soft: 0 1.25rem 3.5rem rgb(23 40 50 / 11%);
     --radius-small: 0.35rem;
     --radius-medium: 0.8rem;
     --container: 75rem;
@@ -95,7 +95,7 @@ a {
     align-items: center;
     justify-content: space-between;
     gap: 2rem;
-    background: rgb(247 245 240 / 94%);
+    background: rgb(244 240 232 / 94%);
     border-bottom: 1px solid var(--color-border);
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
@@ -162,7 +162,7 @@ a {
     width: 100%;
     overflow: hidden;
     isolation: isolate;
-    background: #241c17;
+    background: #172832;
 }
 
 .hero::after {
@@ -428,7 +428,7 @@ p {
     min-height: clamp(22rem, 55vw, 42rem);
     overflow: hidden;
     isolation: isolate;
-    background: #2e322e;
+    background: #20343f;
 }
 
 .section_visual::after {
@@ -637,10 +637,8 @@ p {
     --section-title-progress: 0;
     top: auto;
     bottom: clamp(1.5rem, 4vw, 4rem);
-    opacity: calc(1 - (var(--section-title-progress) * 0.82));
-    transform: translateY(calc(var(--section-title-progress) * 1.5rem)) scale(calc(1 - (var(--section-title-progress) * 0.035)));
-    transform-origin: bottom left;
-    will-change: opacity, transform;
+    opacity: calc(1 - var(--section-title-progress));
+    will-change: opacity;
 }
 
 .section_intro {
@@ -696,7 +694,7 @@ p {
     border: 1px solid var(--color-border);
     border-radius: var(--radius-medium);
     background: var(--color-surface);
-    box-shadow: 0 0.75rem 2.5rem rgb(32 39 34 / 6%);
+    box-shadow: 0 0.75rem 2.5rem rgb(23 40 50 / 7%);
 }
 
 .music_grid {
@@ -710,7 +708,7 @@ p {
     overscroll-behavior-inline: contain;
     border: 1px solid var(--color-border);
     border-radius: var(--radius-medium);
-    background: rgb(255 253 249 / 55%);
+    background: rgb(252 249 243 / 55%);
     scroll-snap-type: inline mandatory;
     scroll-padding-inline: var(--music-grid-edge);
     scrollbar-color: var(--color-accent) transparent;
@@ -731,11 +729,11 @@ p {
     display: none;
     align-items: center;
     justify-content: center;
-    border: 1px solid rgb(37 40 36 / 6%);
+    border: 1px solid rgb(23 40 50 / 7%);
     border-radius: 50%;
-    background: rgb(255 253 249 / 48%);
+    background: rgb(252 249 243 / 48%);
     color: var(--color-accent-dark);
-    box-shadow: 0 0.2rem 0.7rem rgb(32 39 34 / 5%);
+    box-shadow: 0 0.2rem 0.7rem rgb(23 40 50 / 6%);
     backdrop-filter: blur(3px);
     -webkit-backdrop-filter: blur(3px);
     cursor: pointer;
@@ -776,7 +774,7 @@ p {
     border: 1px solid var(--color-border);
     border-radius: var(--radius-medium);
     background: var(--color-surface);
-    box-shadow: 0 0.75rem 2.5rem rgb(32 39 34 / 6%);
+    box-shadow: 0 0.75rem 2.5rem rgb(23 40 50 / 7%);
     scroll-snap-align: center;
 }
 
@@ -1032,7 +1030,7 @@ p {
 }
 
 .social_links a:hover {
-    background: rgb(49 91 74 / 10%);
+    background: rgb(41 75 91 / 10%);
 }
 
 .site_footer {
@@ -1098,7 +1096,7 @@ p {
     margin: 2rem 0;
     padding: 1.2rem 1.4rem;
     border-left: 4px solid var(--color-focus);
-    background: #fff5ef;
+    background: #f9e9e6;
 }
 
 @media (min-width: 44.01rem) and (min-height: 35rem) and (orientation: landscape) {
@@ -1491,6 +1489,6 @@ p {
 
     .section_scroll_heading {
         opacity: 1;
-        transform: none;
     }
+
 }

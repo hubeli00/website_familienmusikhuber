@@ -1,9 +1,9 @@
 const menuButton = document.querySelector('.menu_button');
 const navigation = document.querySelector('#main_navigation');
 const hero = document.querySelector('.hero');
-const scrollingSectionHeadings = [...document.querySelectorAll('.section_scroll_heading')];
+const fadingSectionHeadings = [...document.querySelectorAll('.section_scroll_heading')];
 
-if ((hero || scrollingSectionHeadings.length) && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+if ((hero || fadingSectionHeadings.length) && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
   let scrollUpdatePending = false;
 
   const updateScrollingTitles = () => {
@@ -13,18 +13,18 @@ if ((hero || scrollingSectionHeadings.length) && !window.matchMedia('(prefers-re
       hero.style.setProperty('--hero-title-progress', progress.toFixed(3));
     }
 
-    scrollingSectionHeadings.forEach((heading) => {
+    fadingSectionHeadings.forEach((heading) => {
       const visual = heading.closest('.section_visual');
       const visualRect = visual.getBoundingClientRect();
-      const fadeDistance = Math.max(visualRect.height * 0.55, 240);
-      const progress = Math.min(Math.max((varHeaderHeight() - visualRect.top) / fadeDistance, 0), 1);
+      const fadeDistance = Math.max(visualRect.height * 0.8, 320);
+      const progress = Math.min(Math.max((headerHeight() - visualRect.top) / fadeDistance, 0), 1);
       heading.style.setProperty('--section-title-progress', progress.toFixed(3));
     });
 
     scrollUpdatePending = false;
   };
 
-  const varHeaderHeight = () => {
+  const headerHeight = () => {
     const value = getComputedStyle(document.documentElement).getPropertyValue('--header-height');
     return Number.parseFloat(value) * Number.parseFloat(getComputedStyle(document.documentElement).fontSize);
   };
