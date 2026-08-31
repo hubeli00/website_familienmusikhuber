@@ -121,4 +121,11 @@ const events = [
     location: 'Südtiroler Landesmuseum für Volkskunde Dietenheim'
     link: 'https://www.volksmusikverein.org/veranstaltungen/#Event-68'
   },
+  {
+    title: `Adventsingen`,
+    date: '2026-12-07',
+    time: '',
+    location: 'Frauenkirche Glurns'
+    link: 'https://www.volksmusikverein.org/veranstaltungen/#Event-68'
+  },
 ];
