@@ -118,14 +118,14 @@ const events = [
     title: `"G'sung, g'spielt, gitonzt und dozeihlt" - Tag der Volksmusik`,
     date: '2026-09-13',
     time: '10:00',
-    location: 'Südtiroler Landesmuseum für Volkskunde Dietenheim'
+    location: 'Südtiroler Landesmuseum für Volkskunde Dietenheim',
     link: 'https://www.volksmusikverein.org/veranstaltungen/#Event-68'
   },
   {
     title: `Adventsingen`,
     date: '2026-12-07',
     time: '',
-    location: 'Frauenkirche Glurns'
+    location: 'Frauenkirche Glurns',
     link: 'https://www.volksmusikverein.org/veranstaltungen/#Event-68'
   },
 ];
