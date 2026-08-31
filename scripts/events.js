@@ -107,4 +107,18 @@ const events = [
     location: 'Tiroler Landestheater Innsbruck, Großes Haus (A)',
     link: 'https://www.altemusik.at/de/veranstaltungen/neapolitanisch-aufgspielt'
   },
+  {
+    title: `Volksmusikabend in Luttach`,
+    date: '2026-09-12',
+    time: '19:00',
+    location: 'Luttach im Ahrntal',
+    link: 'https://www.ahrntal.com/de/urlaub-im-ahrntal/veranstaltungen/rid-C5C3E959F9674CF78746F4A822C6D8F5-volksmusikabend-in-luttach.html?date=2026-09-12'
+  },
+  {
+    title: `"G'sung, g'spielt, gitonzt und dozeihlt" - Tag der Volksmusik`,
+    date: '2026-09-13',
+    time: '10:00',
+    location: 'Südtiroler Landesmuseum für Volkskunde Dietenheim'
+    link: 'https://www.volksmusikverein.org/veranstaltungen/#Event-68'
+  },
 ];
